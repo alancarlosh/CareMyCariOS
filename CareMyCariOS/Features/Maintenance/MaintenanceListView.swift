@@ -177,7 +177,7 @@ struct MaintenanceListView: View {
         defer { isLoading = false }
 
         do {
-            records = try await dependencies.maintenanceService.listMaintenance(vehicleId: vehicleId)
+            records = try await dependencies.maintenanceUseCase.listMaintenance(vehicleId: vehicleId)
             errorMessage = nil
         } catch APIError.unauthorized {
             sessionStore.signOut(message: APIError.unauthorized.errorDescription)
@@ -191,7 +191,7 @@ struct MaintenanceListView: View {
         defer { isLoadingRecommendations = false }
 
         do {
-            recommendations = try await dependencies.maintenanceService.listRecommendations(vehicleId: vehicleId)
+            recommendations = try await dependencies.maintenanceUseCase.listRecommendations(vehicleId: vehicleId)
             recommendationsError = nil
         } catch APIError.unauthorized {
             sessionStore.signOut(message: APIError.unauthorized.errorDescription)
@@ -209,7 +209,7 @@ struct MaintenanceListView: View {
         guard let record = recordPendingDelete else { return }
 
         do {
-            try await dependencies.maintenanceService.deleteMaintenance(id: record.id)
+            try await dependencies.maintenanceUseCase.deleteMaintenance(id: record.id)
             records.removeAll { $0.id == record.id }
             recordPendingDelete = nil
         } catch APIError.unauthorized {

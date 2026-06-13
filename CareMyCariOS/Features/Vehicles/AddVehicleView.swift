@@ -138,7 +138,7 @@ struct AddVehicleView: View {
         defer { isCatalogLoading = false }
 
         do {
-            catalogVehicles = try await dependencies.vehicleService.listCatalogVehicles()
+            catalogVehicles = try await dependencies.vehicleUseCase.listCatalogVehicles()
             errorMessage = nil
         } catch APIError.unauthorized {
             sessionStore.signOut(message: APIError.unauthorized.errorDescription)
@@ -187,7 +187,7 @@ struct AddVehicleView: View {
         defer { isSaving = false }
 
         do {
-            _ = try await dependencies.vehicleService.createVehicle(request: request)
+            _ = try await dependencies.vehicleUseCase.createVehicle(request: request)
             onCreated()
         } catch APIError.unauthorized {
             sessionStore.signOut(message: APIError.unauthorized.errorDescription)

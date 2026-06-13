@@ -140,7 +140,7 @@ struct MarketplaceView: View {
         defer { isLoadingProducts = false }
 
         do {
-            products = try await dependencies.marketplaceService.listProducts(query: searchText.trimmedNil, category: nil).items
+            products = try await dependencies.marketplaceUseCase.listProducts(query: searchText.trimmedNil, category: nil).items
         } catch APIError.unauthorized {
             sessionStore.signOut(message: APIError.unauthorized.errorDescription)
         } catch {
@@ -154,7 +154,7 @@ struct MarketplaceView: View {
         defer { isLoadingPurchases = false }
 
         do {
-            purchases = try await dependencies.marketplaceService.listMyPurchases().items
+            purchases = try await dependencies.marketplaceUseCase.listMyPurchases().items
         } catch APIError.unauthorized {
             sessionStore.signOut(message: APIError.unauthorized.errorDescription)
         } catch {
@@ -174,7 +174,7 @@ struct MarketplaceView: View {
     @MainActor
     private func purchase(part: Part, quantity: Int) async {
         do {
-            let order = try await dependencies.marketplaceService.purchase(partId: part.id, quantity: quantity)
+            let order = try await dependencies.marketplaceUseCase.purchase(partId: part.id, quantity: quantity)
             selectedPart = nil
             successMessage = "Compra registrada: \(order.partLabel)"
             await loadProducts()

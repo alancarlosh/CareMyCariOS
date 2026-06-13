@@ -85,7 +85,7 @@ struct RegisterView: View {
         defer { isLoading = false }
 
         do {
-            _ = try await dependencies.authService.register(email: email, password: password, name: name)
+            _ = try await dependencies.authUseCase.register(email: email, password: password, name: name)
             successMessage = "Cuenta creada. Inicia sesion para continuar."
         } catch {
             errorMessage = (error as? LocalizedError)?.errorDescription ?? "Error al registrar usuario."

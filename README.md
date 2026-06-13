@@ -10,6 +10,7 @@ CareMyCar iOS is a SwiftUI portfolio app for vehicle ownership, maintenance trac
 - Keychain-backed session persistence
 - Marketplace, vehicle, maintenance, service order, admin catalog, sales, and PDF export flows
 - Shared design system components for consistent UI states, rows, badges, and loading actions
+- Clean Architecture layers with `Domain`, `Data`, `Core`, and SwiftUI presentation features
 - Environment-based dependency injection through `AppDependencies`
 
 ## Architecture
@@ -17,14 +18,17 @@ CareMyCar iOS is a SwiftUI portfolio app for vehicle ownership, maintenance trac
 The codebase is organized by feature with shared core modules:
 
 - `App`: app entry point, root session routing, splash state
+- `Domain/Repositories`: repository contracts owned by the domain layer
+- `Domain/UseCases`: app use cases consumed by SwiftUI presentation
+- `Data/Repositories`: API-backed repository implementations
 - `Core/Networking`: API client and backend error mapping
 - `Core/Security`: Keychain token storage
 - `Core/Session`: session restoration and sign-out state
 - `Core/DesignSystem`: semantic colors, spacing, reusable rows and state views
-- `Core/DI`: dependency container exposed through SwiftUI environment
+- `Core/DI`: dependency composition root exposed through SwiftUI environment
 - `Core/Presentation`: shared UI state models
-- `Features`: auth, home, vehicles, maintenance, service orders, marketplace, admin and tools
-- `Models`: API DTOs and app-facing models
+- `Features`: SwiftUI presentation for auth, home, vehicles, maintenance, service orders, marketplace, admin and tools
+- `Models`: app entities, request/response DTOs, and DTO-to-domain mapping helpers
 
 See [docs/ios-portfolio-improvement-plan.md](docs/ios-portfolio-improvement-plan.md) for the professional improvement roadmap.
 
@@ -61,5 +65,4 @@ The base URL is defined in `CareMyCariOS/Config/AppConfig.swift`.
 
 ## Portfolio Notes
 
-This project is being prepared as a professional iOS portfolio sample. The current focus is maintainability, consistent UX, dependency injection, and clear evolution toward MVVM/Clean Architecture.
-
+This project is being prepared as a professional iOS portfolio sample. The current focus is maintainability, consistent UX, Clean Architecture boundaries, dependency injection, and a clear path toward ViewModels plus automated tests.

@@ -177,7 +177,7 @@ struct AdminOrdersView: View {
         defer { isLoading = false }
 
         do {
-            let response = try await dependencies.adminOrdersService.listOrders(query: searchText.trimmedNil, status: selectedStatus.trimmedNil)
+            let response = try await dependencies.adminOrdersUseCase.listOrders(query: searchText.trimmedNil, status: selectedStatus.trimmedNil)
             orders = response.items.map(\.asOrder)
             allCount = response.allCount ?? response.total
             pendingCount = response.pendingCount ?? 0
@@ -191,7 +191,7 @@ struct AdminOrdersView: View {
     @MainActor
     private func loadReport() async {
         do {
-            report = try await dependencies.adminOrdersService.dailyReport()
+            report = try await dependencies.adminOrdersUseCase.dailyReport()
         } catch APIError.unauthorized {
             sessionStore.signOut(message: APIError.unauthorized.errorDescription)
         } catch {
@@ -206,7 +206,7 @@ struct AdminOrdersView: View {
 
         do {
             let reportDate = report?.date ?? "daily"
-            let data = try await dependencies.adminOrdersService.dailyReportPDF(date: report?.date)
+            let data = try await dependencies.adminOrdersUseCase.dailyReportPDF(date: report?.date)
             exportedReportURL = try PDFExportStore.write(data: data, fileName: "ventas_\(reportDate).pdf")
             successMessage = "PDF generado"
         } catch APIError.unauthorized {
@@ -222,7 +222,7 @@ struct AdminOrdersView: View {
         defer { isUpdating = false }
 
         do {
-            let updated = try await dependencies.adminOrdersService.updateStatus(orderId: order.id, status: status)
+            let updated = try await dependencies.adminOrdersUseCase.updateStatus(orderId: order.id, status: status)
             if let index = orders.firstIndex(where: { $0.id == updated.id }) {
                 orders[index] = updated
             }
@@ -373,8 +373,8 @@ private struct AdminCreateOrderView: View {
         defer { isLoading = false }
 
         do {
-            async let vehicleResult = dependencies.vehicleService.listCatalogVehicles()
-            async let partsResult = dependencies.adminPartsService.listParts(query: nil, category: nil, page: 1, limit: 100)
+            async let vehicleResult = dependencies.vehicleUseCase.listCatalogVehicles()
+            async let partsResult = dependencies.adminPartsUseCase.listParts(query: nil, category: nil, page: 1, limit: 100)
             catalogVehicles = try await vehicleResult
             parts = try await partsResult.items
             clearUnavailablePartSelection()
@@ -422,7 +422,7 @@ private struct AdminCreateOrderView: View {
         defer { isSaving = false }
 
         do {
-            let order = try await dependencies.adminOrdersService.createOrder(request: CreateOrderRequest(
+            let order = try await dependencies.adminOrdersUseCase.createOrder(request: CreateOrderRequest(
                 clientName: clientName.trimmed,
                 vin: vin.trimmed,
                 make: make.trimmed,

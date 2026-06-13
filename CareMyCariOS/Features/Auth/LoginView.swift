@@ -106,7 +106,7 @@ struct LoginView: View {
         defer { isLoading = false }
 
         do {
-            let response = try await dependencies.authService.login(email: email, password: password)
+            let response = try await dependencies.authUseCase.login(email: email, password: password)
             sessionStore.signIn(user: response.user.asUser, accessToken: response.accessToken)
         } catch {
             errorMessage = (error as? LocalizedError)?.errorDescription ?? "Error al iniciar sesion."

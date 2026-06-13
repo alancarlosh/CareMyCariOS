@@ -101,7 +101,7 @@ struct ServiceOrdersView: View {
         defer { isLoading = false }
 
         do {
-            orders = try await dependencies.serviceOrderService.listMyServiceOrders(vehicleId: vehicleId)
+            orders = try await dependencies.serviceOrderUseCase.listMyServiceOrders(vehicleId: vehicleId)
             errorMessage = nil
         } catch APIError.unauthorized {
             sessionStore.signOut(message: APIError.unauthorized.errorDescription)
@@ -121,7 +121,7 @@ struct ServiceOrdersView: View {
         defer { isQuoting = false }
 
         do {
-            quote = try await dependencies.serviceOrderService.quote(vehicleId: vehicleId, serviceType: normalizedServiceType)
+            quote = try await dependencies.serviceOrderUseCase.quote(vehicleId: vehicleId, serviceType: normalizedServiceType)
             errorMessage = nil
         } catch APIError.unauthorized {
             sessionStore.signOut(message: APIError.unauthorized.errorDescription)
@@ -143,7 +143,7 @@ struct ServiceOrdersView: View {
         defer { isCreating = false }
 
         do {
-            let created = try await dependencies.serviceOrderService.create(
+            let created = try await dependencies.serviceOrderUseCase.create(
                 request: CreateServiceOrderRequest(
                     vehicleId: vehicleId,
                     serviceType: normalizedServiceType,

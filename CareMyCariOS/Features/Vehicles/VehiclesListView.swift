@@ -107,7 +107,7 @@ struct VehiclesListView: View {
         defer { isLoading = false }
 
         do {
-            vehicles = try await dependencies.vehicleService.listVehicles()
+            vehicles = try await dependencies.vehicleUseCase.listVehicles()
             errorMessage = nil
         } catch APIError.unauthorized {
             sessionStore.signOut(message: APIError.unauthorized.errorDescription)

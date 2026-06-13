@@ -113,7 +113,7 @@ struct MaintenanceFormView: View {
             let saved: MaintenanceRecord
             switch mode {
             case .create(let vehicleId):
-                saved = try await dependencies.maintenanceService.createMaintenance(
+                saved = try await dependencies.maintenanceUseCase.createMaintenance(
                     request: CreateMaintenanceRequest(
                         vehicleId: vehicleId,
                         serviceType: normalized.serviceType,
@@ -124,7 +124,7 @@ struct MaintenanceFormView: View {
                     )
                 )
             case .edit(let record):
-                saved = try await dependencies.maintenanceService.updateMaintenance(
+                saved = try await dependencies.maintenanceUseCase.updateMaintenance(
                     id: record.id,
                     request: UpdateMaintenanceRequest(
                         serviceType: normalized.serviceType,

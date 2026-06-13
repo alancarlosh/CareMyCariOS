@@ -24,24 +24,24 @@ Screens that most benefit from redesign:
 - Admin dashboard: should show real operational metrics instead of static shortcuts.
 - Marketplace: needs filtering, stock emphasis, and purchase confirmation feedback.
 
-## Architecture Target
+## Architecture
 
-The recommended target is MVVM with Clean Architecture boundaries:
+The app now uses Clean Architecture boundaries:
 
-- Presentation: SwiftUI views, view models, UI state, navigation routes.
-- Domain: use cases and app entities independent from API DTOs.
-- Data: API clients, repositories, DTO mapping, Keychain/session persistence.
-- Core: design system, dependency injection, networking, error mapping, analytics hooks.
+- Presentation: SwiftUI feature views, UI state, navigation routes, and reusable design components.
+- Domain: repository contracts and use cases.
+- Data: API-backed repository implementations using `APIClient`.
+- Core: design system, dependency injection, networking, security, session, and shared presentation state.
 
-The first implemented step is `AppDependencies`, which centralizes service construction and exposes dependencies through SwiftUI `Environment`. This reduces coupling immediately and creates a path to mocks for previews/tests.
+`AppDependencies` is the composition root. It wires concrete API repositories into domain use cases and exposes those use cases through SwiftUI `Environment`. Views no longer create concrete services directly.
 
 Suggested next refactor:
 
-1. Define service protocols, for example `VehicleServicing`, `AuthServicing`, `OrdersServicing`.
-2. Move screen state from large views into `@MainActor ObservableObject` view models.
-3. Introduce repositories when API DTOs start leaking too much into UI workflows.
-4. Create typed navigation routes per feature instead of scattered boolean sheet/navigation state.
-5. Add unit tests for view models and decoding tests for every API response model.
+1. Move screen state from large views into `@MainActor ObservableObject` view models.
+2. Split DTOs from app-facing entities where model files currently contain both.
+3. Create typed navigation routes per feature instead of scattered boolean sheet/navigation state.
+4. Add unit tests for use cases and view models.
+5. Add decoding tests for every API response model.
 
 ## App Store Readiness
 
@@ -59,7 +59,8 @@ Before publishing or presenting as production-grade:
 - Added semantic design tokens in `AppTheme`.
 - Added reusable state views for loading, empty, and error states.
 - Added reusable icon/row components and loading button labels.
-- Added `AppDependencies` and injected it through the SwiftUI environment.
-- Migrated auth, vehicle, marketplace, and key admin flows to use injected services.
+- Added `Domain` repository contracts and use cases.
+- Added `Data` API repository implementations.
+- Added `AppDependencies` and injected use cases through the SwiftUI environment.
+- Removed direct service construction from SwiftUI views.
 - Modernized login, register, splash, vehicle list, vehicle detail, and add-vehicle surfaces.
-

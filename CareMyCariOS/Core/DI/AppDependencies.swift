@@ -2,29 +2,29 @@ import SwiftUI
 
 struct AppDependencies {
     let apiClient: APIClient
-    let authService: AuthService
-    let vehicleService: VehicleService
-    let maintenanceService: MaintenanceService
-    let serviceOrderService: ServiceOrderService
-    let marketplaceService: MarketplaceService
-    let monthlyCostService: MonthlyCostService
-    let adminPartsService: AdminPartsService
-    let adminOrdersService: AdminOrdersService
-    let adminServiceOrdersService: AdminServiceOrdersService
+    let authUseCase: AuthUseCase
+    let vehicleUseCase: VehicleUseCase
+    let maintenanceUseCase: MaintenanceUseCase
+    let serviceOrderUseCase: ServiceOrderUseCase
+    let marketplaceUseCase: MarketplaceUseCase
+    let monthlyCostUseCase: MonthlyCostUseCase
+    let adminPartsUseCase: AdminPartsUseCase
+    let adminOrdersUseCase: AdminOrdersUseCase
+    let adminServiceOrdersUseCase: AdminServiceOrdersUseCase
 
     static let live: AppDependencies = {
         let apiClient = APIClient()
         return AppDependencies(
             apiClient: apiClient,
-            authService: AuthService(apiClient: apiClient),
-            vehicleService: VehicleService(apiClient: apiClient),
-            maintenanceService: MaintenanceService(apiClient: apiClient),
-            serviceOrderService: ServiceOrderService(apiClient: apiClient),
-            marketplaceService: MarketplaceService(apiClient: apiClient),
-            monthlyCostService: MonthlyCostService(apiClient: apiClient),
-            adminPartsService: AdminPartsService(apiClient: apiClient),
-            adminOrdersService: AdminOrdersService(apiClient: apiClient),
-            adminServiceOrdersService: AdminServiceOrdersService(apiClient: apiClient)
+            authUseCase: AuthUseCase(repository: APIAuthRepository(apiClient: apiClient)),
+            vehicleUseCase: VehicleUseCase(repository: APIVehicleRepository(apiClient: apiClient)),
+            maintenanceUseCase: MaintenanceUseCase(repository: APIMaintenanceRepository(apiClient: apiClient)),
+            serviceOrderUseCase: ServiceOrderUseCase(repository: APIServiceOrderRepository(apiClient: apiClient)),
+            marketplaceUseCase: MarketplaceUseCase(repository: APIMarketplaceRepository(apiClient: apiClient)),
+            monthlyCostUseCase: MonthlyCostUseCase(repository: APIMonthlyCostRepository(apiClient: apiClient)),
+            adminPartsUseCase: AdminPartsUseCase(repository: APIAdminPartsRepository(apiClient: apiClient)),
+            adminOrdersUseCase: AdminOrdersUseCase(repository: APIAdminOrdersRepository(apiClient: apiClient)),
+            adminServiceOrdersUseCase: AdminServiceOrdersUseCase(repository: APIAdminServiceOrdersRepository(apiClient: apiClient))
         )
     }()
 }
@@ -39,4 +39,3 @@ extension EnvironmentValues {
         set { self[AppDependenciesKey.self] = newValue }
     }
 }
-

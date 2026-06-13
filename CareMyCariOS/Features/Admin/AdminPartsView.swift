@@ -117,7 +117,7 @@ struct AdminPartsView: View {
         defer { isLoading = false }
 
         do {
-            parts = try await dependencies.adminPartsService.listParts(query: searchText.trimmedNil, category: nil).items
+            parts = try await dependencies.adminPartsUseCase.listParts(query: searchText.trimmedNil, category: nil).items
         } catch {
             errorMessage = error.localizedDescription
         }
@@ -126,7 +126,7 @@ struct AdminPartsView: View {
     @MainActor
     private func delete(_ part: Part) async {
         do {
-            try await dependencies.adminPartsService.deletePart(id: part.id)
+            try await dependencies.adminPartsUseCase.deletePart(id: part.id)
             parts.removeAll { $0.id == part.id }
             partToDelete = nil
             successMessage = "Refaccion eliminada"
@@ -254,7 +254,7 @@ struct AdminPartFormView: View {
     @MainActor
     private func loadCatalog() async {
         do {
-            catalogVehicles = try await dependencies.vehicleService.listCatalogVehicles()
+            catalogVehicles = try await dependencies.vehicleUseCase.listCatalogVehicles()
         } catch {
             errorMessage = error.localizedDescription
         }
@@ -300,7 +300,7 @@ struct AdminPartFormView: View {
             let savedPart: Part
             switch route.mode {
             case .create:
-                savedPart = try await dependencies.adminPartsService.createPart(request: CreatePartRequest(
+                savedPart = try await dependencies.adminPartsUseCase.createPart(request: CreatePartRequest(
                     name: name.trimmed,
                     category: category.trimmed,
                     make: make.trimmedNil,
@@ -311,7 +311,7 @@ struct AdminPartFormView: View {
                     quantity: quantityValue
                 ))
             case .edit(let part):
-                savedPart = try await dependencies.adminPartsService.updatePart(id: part.id, request: UpdatePartRequest(
+                savedPart = try await dependencies.adminPartsUseCase.updatePart(id: part.id, request: UpdatePartRequest(
                     name: name.trimmed,
                     category: category.trimmed,
                     make: make.trimmed,

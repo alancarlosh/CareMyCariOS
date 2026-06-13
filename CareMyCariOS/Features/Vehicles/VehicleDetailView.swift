@@ -155,7 +155,7 @@ struct VehicleDetailView: View {
         defer { isLoading = false }
 
         do {
-            let loadedVehicle = try await dependencies.vehicleService.getVehicle(id: vehicleId)
+            let loadedVehicle = try await dependencies.vehicleUseCase.getVehicle(id: vehicleId)
             vehicle = loadedVehicle
             mileage = loadedVehicle.currentMileage.map { String(Int($0)) } ?? ""
             errorMessage = nil
@@ -181,7 +181,7 @@ struct VehicleDetailView: View {
         defer { isSavingMileage = false }
 
         do {
-            let updatedVehicle = try await dependencies.vehicleService.updateMileage(vehicleId: vehicleId, mileage: mileageValue)
+            let updatedVehicle = try await dependencies.vehicleUseCase.updateMileage(vehicleId: vehicleId, mileage: mileageValue)
             vehicle = updatedVehicle
             mileage = updatedVehicle.currentMileage.map { String(Int($0)) } ?? ""
             successMessage = "Kilometraje actualizado."
@@ -198,7 +198,7 @@ struct VehicleDetailView: View {
         defer { isDeleting = false }
 
         do {
-            try await dependencies.vehicleService.deleteVehicle(id: vehicleId)
+            try await dependencies.vehicleUseCase.deleteVehicle(id: vehicleId)
             onChanged()
             dismiss()
         } catch APIError.unauthorized {

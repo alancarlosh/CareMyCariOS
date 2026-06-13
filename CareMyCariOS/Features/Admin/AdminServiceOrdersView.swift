@@ -129,7 +129,7 @@ struct AdminServiceOrdersView: View {
         defer { isLoading = false }
 
         do {
-            orders = try await dependencies.adminServiceOrdersService.listOrders(status: selectedStatus.trimmedNil)
+            orders = try await dependencies.adminServiceOrdersUseCase.listOrders(status: selectedStatus.trimmedNil)
         } catch APIError.unauthorized {
             sessionStore.signOut(message: APIError.unauthorized.errorDescription)
         } catch {
@@ -146,10 +146,10 @@ struct AdminServiceOrdersView: View {
             let updated: ServiceOrder
             switch action {
             case .start(let notes):
-                updated = try await dependencies.adminServiceOrdersService.start(orderId: order.id, agencyNotes: notes)
+                updated = try await dependencies.adminServiceOrdersUseCase.start(orderId: order.id, agencyNotes: notes)
                 successMessage = "Orden iniciada"
             case .complete(let token, let finalCost, let notes, let mileage):
-                updated = try await dependencies.adminServiceOrdersService.complete(
+                updated = try await dependencies.adminServiceOrdersUseCase.complete(
                     orderId: order.id,
                     completionToken: token,
                     finalCost: finalCost,
@@ -158,7 +158,7 @@ struct AdminServiceOrdersView: View {
                 )
                 successMessage = "Orden finalizada"
             case .cancel(let notes):
-                updated = try await dependencies.adminServiceOrdersService.cancel(orderId: order.id, agencyNotes: notes)
+                updated = try await dependencies.adminServiceOrdersUseCase.cancel(orderId: order.id, agencyNotes: notes)
                 successMessage = "Orden cancelada"
             }
 
@@ -187,7 +187,7 @@ struct AdminServiceOrdersView: View {
         do {
             let fromValue = includesReportFrom ? Self.dateFormatter.string(from: reportFrom) : nil
             let toValue = includesReportTo ? Self.dateFormatter.string(from: reportTo) : nil
-            let data = try await dependencies.adminServiceOrdersService.reportPDF(from: fromValue, to: toValue)
+            let data = try await dependencies.adminServiceOrdersUseCase.reportPDF(from: fromValue, to: toValue)
             let suffix = [fromValue, toValue].compactMap { $0 }.joined(separator: "_")
             exportedReportURL = try PDFExportStore.write(
                 data: data,

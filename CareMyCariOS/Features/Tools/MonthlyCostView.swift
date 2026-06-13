@@ -94,7 +94,7 @@ struct MonthlyCostView: View {
         defer { isCalculating = false }
 
         do {
-            estimate = try await dependencies.monthlyCostService.estimate(
+            estimate = try await dependencies.monthlyCostUseCase.estimate(
                 monthlyKm: monthlyKmValue,
                 kmPerLiter: kmPerLiterValue,
                 fuelPrice: fuelPriceValue,
