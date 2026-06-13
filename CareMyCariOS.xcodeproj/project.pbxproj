@@ -1,0 +1,653 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A1000010000000000000001 /* CareMyCariOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000001 /* CareMyCariOSApp.swift */; };
+		7A1000010000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000002 /* ContentView.swift */; };
+		7A1000010000000000000003 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000003 /* AppConfig.swift */; };
+		7A1000010000000000000004 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000004 /* APIClient.swift */; };
+		7A1000010000000000000005 /* KeychainTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000005 /* KeychainTokenStore.swift */; };
+		7A1000010000000000000006 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000006 /* SessionStore.swift */; };
+		7A1000010000000000000007 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000007 /* AuthService.swift */; };
+		7A1000010000000000000008 /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000008 /* AuthModels.swift */; };
+		7A1000010000000000000009 /* UserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000009 /* UserModels.swift */; };
+		7A100001000000000000000A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A200001000000000000000A /* LoginView.swift */; };
+		7A100001000000000000000B /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A200001000000000000000B /* RegisterView.swift */; };
+		7A100001000000000000000C /* RoleHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A200001000000000000000C /* RoleHomeView.swift */; };
+		7A100001000000000000000D /* VehicleModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A200001000000000000000F /* VehicleModels.swift */; };
+		7A100001000000000000000E /* VehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000010 /* VehicleService.swift */; };
+		7A100001000000000000000F /* VehiclesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000011 /* VehiclesListView.swift */; };
+		7A1000010000000000000010 /* VehicleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000012 /* VehicleDetailView.swift */; };
+		7A1000010000000000000011 /* AddVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000013 /* AddVehicleView.swift */; };
+		7A1000010000000000000012 /* MaintenanceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000014 /* MaintenanceModels.swift */; };
+		7A1000010000000000000013 /* MaintenanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000015 /* MaintenanceService.swift */; };
+		7A1000010000000000000014 /* MaintenanceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000016 /* MaintenanceListView.swift */; };
+		7A1000010000000000000015 /* MaintenanceFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000017 /* MaintenanceFormView.swift */; };
+		7A1000010000000000000016 /* ServiceOrderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000018 /* ServiceOrderModels.swift */; };
+		7A1000010000000000000017 /* ServiceOrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000019 /* ServiceOrderService.swift */; };
+		7A1000010000000000000018 /* ServiceOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A200001000000000000001A /* ServiceOrdersView.swift */; };
+		7A1000010000000000000019 /* MarketplaceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A200001000000000000001B /* MarketplaceModels.swift */; };
+		7A100001000000000000001A /* MarketplaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A200001000000000000001C /* MarketplaceService.swift */; };
+		7A100001000000000000001B /* MarketplaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A200001000000000000001D /* MarketplaceView.swift */; };
+		7A100001000000000000001C /* AdminPartsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A200001000000000000001E /* AdminPartsService.swift */; };
+		7A100001000000000000001D /* AdminPartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A200001000000000000001F /* AdminPartsView.swift */; };
+		7A100001000000000000001E /* AdminOrdersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000020 /* AdminOrdersService.swift */; };
+		7A100001000000000000001F /* AdminOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000021 /* AdminOrdersView.swift */; };
+		7A1000010000000000000020 /* AdminServiceOrdersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000022 /* AdminServiceOrdersService.swift */; };
+		7A1000010000000000000021 /* AdminServiceOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000023 /* AdminServiceOrdersView.swift */; };
+		7A1000010000000000000022 /* MonthlyCostModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000024 /* MonthlyCostModels.swift */; };
+		7A1000010000000000000023 /* MonthlyCostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000025 /* MonthlyCostService.swift */; };
+		7A1000010000000000000024 /* MonthlyCostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000026 /* MonthlyCostView.swift */; };
+		7A1000010000000000000025 /* PDFExportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000027 /* PDFExportStore.swift */; };
+		7A1000010000000000000028 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000028 /* AppTheme.swift */; };
+		7A1000010000000000000029 /* AppStateViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2000010000000000000029 /* AppStateViews.swift */; };
+		7A100001000000000000002A /* AppRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A200001000000000000002A /* AppRows.swift */; };
+		7A100001000000000000002B /* AppUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A200001000000000000002B /* AppUIState.swift */; };
+		7A100001000000000000002C /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A200001000000000000002C /* AppDependencies.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7A2000010000000000000001 /* CareMyCariOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareMyCariOSApp.swift; sourceTree = "<group>"; };
+		7A2000010000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7A2000010000000000000003 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		7A2000010000000000000004 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		7A2000010000000000000005 /* KeychainTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTokenStore.swift; sourceTree = "<group>"; };
+		7A2000010000000000000006 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		7A2000010000000000000007 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		7A2000010000000000000008 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
+		7A2000010000000000000009 /* UserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModels.swift; sourceTree = "<group>"; };
+		7A200001000000000000000A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		7A200001000000000000000B /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		7A200001000000000000000C /* RoleHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleHomeView.swift; sourceTree = "<group>"; };
+		7A200001000000000000000D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7A200001000000000000000E /* CareMyCariOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareMyCariOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A200001000000000000000F /* VehicleModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModels.swift; sourceTree = "<group>"; };
+		7A2000010000000000000010 /* VehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleService.swift; sourceTree = "<group>"; };
+		7A2000010000000000000011 /* VehiclesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesListView.swift; sourceTree = "<group>"; };
+		7A2000010000000000000012 /* VehicleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailView.swift; sourceTree = "<group>"; };
+		7A2000010000000000000013 /* AddVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleView.swift; sourceTree = "<group>"; };
+		7A2000010000000000000014 /* MaintenanceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceModels.swift; sourceTree = "<group>"; };
+		7A2000010000000000000015 /* MaintenanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceService.swift; sourceTree = "<group>"; };
+		7A2000010000000000000016 /* MaintenanceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceListView.swift; sourceTree = "<group>"; };
+		7A2000010000000000000017 /* MaintenanceFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceFormView.swift; sourceTree = "<group>"; };
+		7A2000010000000000000018 /* ServiceOrderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOrderModels.swift; sourceTree = "<group>"; };
+		7A2000010000000000000019 /* ServiceOrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOrderService.swift; sourceTree = "<group>"; };
+		7A200001000000000000001A /* ServiceOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOrdersView.swift; sourceTree = "<group>"; };
+		7A200001000000000000001B /* MarketplaceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceModels.swift; sourceTree = "<group>"; };
+		7A200001000000000000001C /* MarketplaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceService.swift; sourceTree = "<group>"; };
+		7A200001000000000000001D /* MarketplaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceView.swift; sourceTree = "<group>"; };
+		7A200001000000000000001E /* AdminPartsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPartsService.swift; sourceTree = "<group>"; };
+		7A200001000000000000001F /* AdminPartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPartsView.swift; sourceTree = "<group>"; };
+		7A2000010000000000000020 /* AdminOrdersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOrdersService.swift; sourceTree = "<group>"; };
+		7A2000010000000000000021 /* AdminOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOrdersView.swift; sourceTree = "<group>"; };
+		7A2000010000000000000022 /* AdminServiceOrdersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminServiceOrdersService.swift; sourceTree = "<group>"; };
+		7A2000010000000000000023 /* AdminServiceOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminServiceOrdersView.swift; sourceTree = "<group>"; };
+		7A2000010000000000000024 /* MonthlyCostModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyCostModels.swift; sourceTree = "<group>"; };
+		7A2000010000000000000025 /* MonthlyCostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyCostService.swift; sourceTree = "<group>"; };
+		7A2000010000000000000026 /* MonthlyCostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyCostView.swift; sourceTree = "<group>"; };
+		7A2000010000000000000027 /* PDFExportStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExportStore.swift; sourceTree = "<group>"; };
+		7A2000010000000000000028 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		7A2000010000000000000029 /* AppStateViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateViews.swift; sourceTree = "<group>"; };
+		7A200001000000000000002A /* AppRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRows.swift; sourceTree = "<group>"; };
+		7A200001000000000000002B /* AppUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUIState.swift; sourceTree = "<group>"; };
+		7A200001000000000000002C /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A3000010000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7A4000010000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				7A4000010000000000000002 /* CareMyCariOS */,
+				7A4000010000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000002 /* CareMyCariOS */ = {
+			isa = PBXGroup;
+			children = (
+				7A4000010000000000000004 /* App */,
+				7A4000010000000000000005 /* Config */,
+				7A4000010000000000000006 /* Core */,
+				7A400001000000000000000A /* Features */,
+				7A400001000000000000000D /* Models */,
+				7A200001000000000000000D /* Assets.xcassets */,
+			);
+			path = CareMyCariOS;
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A200001000000000000000E /* CareMyCariOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000004 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7A2000010000000000000001 /* CareMyCariOSApp.swift */,
+				7A2000010000000000000002 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000005 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				7A2000010000000000000003 /* AppConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000006 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7A4000010000000000000014 /* DesignSystem */,
+				7A4000010000000000000015 /* DI */,
+				7A4000010000000000000007 /* Networking */,
+				7A4000010000000000000016 /* Presentation */,
+				7A4000010000000000000008 /* Security */,
+				7A4000010000000000000009 /* Session */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000007 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7A2000010000000000000004 /* APIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000008 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				7A2000010000000000000005 /* KeychainTokenStore.swift */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000009 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				7A2000010000000000000006 /* SessionStore.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		7A400001000000000000000A /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				7A400001000000000000000B /* Auth */,
+				7A400001000000000000000C /* Home */,
+				7A400001000000000000000E /* Vehicles */,
+				7A400001000000000000000F /* Maintenance */,
+				7A4000010000000000000010 /* ServiceOrders */,
+				7A4000010000000000000011 /* Marketplace */,
+				7A4000010000000000000012 /* Admin */,
+				7A4000010000000000000013 /* Tools */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		7A400001000000000000000B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7A2000010000000000000007 /* AuthService.swift */,
+				7A200001000000000000000A /* LoginView.swift */,
+				7A200001000000000000000B /* RegisterView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		7A400001000000000000000C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7A200001000000000000000C /* RoleHomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7A400001000000000000000D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7A2000010000000000000008 /* AuthModels.swift */,
+				7A2000010000000000000009 /* UserModels.swift */,
+				7A200001000000000000000F /* VehicleModels.swift */,
+				7A2000010000000000000014 /* MaintenanceModels.swift */,
+				7A2000010000000000000018 /* ServiceOrderModels.swift */,
+				7A200001000000000000001B /* MarketplaceModels.swift */,
+				7A2000010000000000000024 /* MonthlyCostModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7A400001000000000000000E /* Vehicles */ = {
+			isa = PBXGroup;
+			children = (
+				7A2000010000000000000010 /* VehicleService.swift */,
+				7A2000010000000000000011 /* VehiclesListView.swift */,
+				7A2000010000000000000012 /* VehicleDetailView.swift */,
+				7A2000010000000000000013 /* AddVehicleView.swift */,
+			);
+			path = Vehicles;
+			sourceTree = "<group>";
+		};
+		7A400001000000000000000F /* Maintenance */ = {
+			isa = PBXGroup;
+			children = (
+				7A2000010000000000000015 /* MaintenanceService.swift */,
+				7A2000010000000000000016 /* MaintenanceListView.swift */,
+				7A2000010000000000000017 /* MaintenanceFormView.swift */,
+			);
+			path = Maintenance;
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000010 /* ServiceOrders */ = {
+			isa = PBXGroup;
+			children = (
+				7A2000010000000000000019 /* ServiceOrderService.swift */,
+				7A200001000000000000001A /* ServiceOrdersView.swift */,
+			);
+			path = ServiceOrders;
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000011 /* Marketplace */ = {
+			isa = PBXGroup;
+			children = (
+				7A200001000000000000001C /* MarketplaceService.swift */,
+				7A200001000000000000001D /* MarketplaceView.swift */,
+			);
+			path = Marketplace;
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000012 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				7A200001000000000000001E /* AdminPartsService.swift */,
+				7A200001000000000000001F /* AdminPartsView.swift */,
+				7A2000010000000000000020 /* AdminOrdersService.swift */,
+				7A2000010000000000000021 /* AdminOrdersView.swift */,
+				7A2000010000000000000022 /* AdminServiceOrdersService.swift */,
+				7A2000010000000000000023 /* AdminServiceOrdersView.swift */,
+				7A2000010000000000000027 /* PDFExportStore.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000013 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				7A2000010000000000000025 /* MonthlyCostService.swift */,
+				7A2000010000000000000026 /* MonthlyCostView.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000014 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				7A2000010000000000000028 /* AppTheme.swift */,
+				7A2000010000000000000029 /* AppStateViews.swift */,
+				7A200001000000000000002A /* AppRows.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000015 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				7A200001000000000000002C /* AppDependencies.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		7A4000010000000000000016 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				7A200001000000000000002B /* AppUIState.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7A5000010000000000000001 /* CareMyCariOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A8000010000000000000002 /* Build configuration list for PBXNativeTarget "CareMyCariOS" */;
+			buildPhases = (
+				7A6000010000000000000001 /* Sources */,
+				7A3000010000000000000001 /* Frameworks */,
+				7A6000010000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CareMyCariOS;
+			packageProductDependencies = (
+			);
+			productName = CareMyCariOS;
+			productReference = 7A200001000000000000000E /* CareMyCariOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7A7000010000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					7A5000010000000000000001 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+				};
+			};
+			buildConfigurationList = 7A8000010000000000000001 /* Build configuration list for PBXProject "CareMyCariOS" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7A4000010000000000000001;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7A4000010000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A5000010000000000000001 /* CareMyCariOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A6000010000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A6000010000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A1000010000000000000001 /* CareMyCariOSApp.swift in Sources */,
+				7A1000010000000000000002 /* ContentView.swift in Sources */,
+				7A1000010000000000000003 /* AppConfig.swift in Sources */,
+				7A1000010000000000000004 /* APIClient.swift in Sources */,
+				7A1000010000000000000005 /* KeychainTokenStore.swift in Sources */,
+				7A1000010000000000000006 /* SessionStore.swift in Sources */,
+				7A1000010000000000000007 /* AuthService.swift in Sources */,
+				7A1000010000000000000008 /* AuthModels.swift in Sources */,
+				7A1000010000000000000009 /* UserModels.swift in Sources */,
+				7A100001000000000000000A /* LoginView.swift in Sources */,
+				7A100001000000000000000B /* RegisterView.swift in Sources */,
+				7A100001000000000000000C /* RoleHomeView.swift in Sources */,
+				7A100001000000000000000D /* VehicleModels.swift in Sources */,
+				7A100001000000000000000E /* VehicleService.swift in Sources */,
+				7A100001000000000000000F /* VehiclesListView.swift in Sources */,
+				7A1000010000000000000010 /* VehicleDetailView.swift in Sources */,
+				7A1000010000000000000011 /* AddVehicleView.swift in Sources */,
+				7A1000010000000000000012 /* MaintenanceModels.swift in Sources */,
+				7A1000010000000000000013 /* MaintenanceService.swift in Sources */,
+				7A1000010000000000000014 /* MaintenanceListView.swift in Sources */,
+				7A1000010000000000000015 /* MaintenanceFormView.swift in Sources */,
+				7A1000010000000000000016 /* ServiceOrderModels.swift in Sources */,
+				7A1000010000000000000017 /* ServiceOrderService.swift in Sources */,
+				7A1000010000000000000018 /* ServiceOrdersView.swift in Sources */,
+				7A1000010000000000000019 /* MarketplaceModels.swift in Sources */,
+				7A100001000000000000001A /* MarketplaceService.swift in Sources */,
+				7A100001000000000000001B /* MarketplaceView.swift in Sources */,
+				7A100001000000000000001C /* AdminPartsService.swift in Sources */,
+				7A100001000000000000001D /* AdminPartsView.swift in Sources */,
+				7A100001000000000000001E /* AdminOrdersService.swift in Sources */,
+				7A100001000000000000001F /* AdminOrdersView.swift in Sources */,
+				7A1000010000000000000020 /* AdminServiceOrdersService.swift in Sources */,
+				7A1000010000000000000021 /* AdminServiceOrdersView.swift in Sources */,
+				7A1000010000000000000022 /* MonthlyCostModels.swift in Sources */,
+				7A1000010000000000000023 /* MonthlyCostService.swift in Sources */,
+				7A1000010000000000000024 /* MonthlyCostView.swift in Sources */,
+				7A1000010000000000000025 /* PDFExportStore.swift in Sources */,
+				7A1000010000000000000028 /* AppTheme.swift in Sources */,
+				7A1000010000000000000029 /* AppStateViews.swift in Sources */,
+				7A100001000000000000002A /* AppRows.swift in Sources */,
+				7A100001000000000000002B /* AppUIState.swift in Sources */,
+				7A100001000000000000002C /* AppDependencies.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7A9000010000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7A9000010000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A9000010000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CareMyCar;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itsm.caremycar.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7A9000010000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CareMyCar;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itsm.caremycar.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A8000010000000000000001 /* Build configuration list for PBXProject "CareMyCariOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A9000010000000000000001 /* Debug */,
+				7A9000010000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A8000010000000000000002 /* Build configuration list for PBXNativeTarget "CareMyCariOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A9000010000000000000003 /* Debug */,
+				7A9000010000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7A7000010000000000000001 /* Project object */;
+}
